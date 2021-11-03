@@ -1,14 +1,18 @@
 import Head from "next/head";
 import Loader from "../components.js/Loader";
+import Navbar from "../components.js/Navbar";
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50">
+    <div className="flex flex-col  justify-start min-h-screen  bg-gray-50">
       <Head>
         <title>Next Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <Loader show={true} />
+
+      <main className="flex flex-col  justify-start w-screen flex-1 ">
+        <Navbar />
+        <p className="text-blue-300">what is happening?</p>
+        <Loader show={false} />
       </main>
     </div>
   );

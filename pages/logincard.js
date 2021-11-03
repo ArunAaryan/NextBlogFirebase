@@ -6,7 +6,10 @@ function LoginCard() {
   console.log("user", user);
   return (
     <div>
-      <button className="bg-gray-100 p-5" onClick={signInWithGoogle}>
+      <button
+        className="bg-gray-200 p-5 font-extrabold"
+        onClick={signInWithGoogle}
+      >
         SignIn
       </button>
     </div>
