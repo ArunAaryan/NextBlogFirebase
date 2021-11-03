@@ -7,10 +7,10 @@ function LoginCard() {
   return (
     <div>
       <button
-        className="bg-gray-200 p-5 font-extrabold"
+        className="rounded-md font-extrabold text-white p-3 mx-2 px-4 bg-indigo-500"
         onClick={signInWithGoogle}
       >
-        SignIn
+        Sign In With Google
       </button>
     </div>
   );

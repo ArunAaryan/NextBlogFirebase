@@ -1,7 +1,7 @@
 import Link from "next/link";
 function Navbar() {
-  const { user, username } = { user: "arun", username: "arun-aaryan" };
-  // const { user, username } = { user: "arun", username: "" };
+  // const { user, username } = { user: "arun", username: "arun-aaryan" };
+  const { user, username } = { user: "arun", username: "" };
   return (
     <nav className="w-full px-2 bg-gray-50 my-4">
       <ul className="flex  justify-between ">
