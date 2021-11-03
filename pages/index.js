@@ -1,14 +1,14 @@
 import Head from "next/head";
+import Loader from "../components.js/Loader";
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50">
       <Head>
         <title>Next Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <p>This is home card</p>
+        <Loader show={true} />
       </main>
     </div>
   );
