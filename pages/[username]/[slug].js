@@ -1,5 +1,13 @@
+import { useRouter } from "next/router";
 function PostPage() {
-  return <div></div>;
+  const router = useRouter();
+  console.log(router);
+  return (
+    <div>
+      <p>This is {router.query.username}'s</p>
+      <p>{router.query.slug} post</p>
+    </div>
+  );
 }
 
 export default PostPage;

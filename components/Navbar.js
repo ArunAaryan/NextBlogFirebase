@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { userContext } from "../lib/authContext";
+
 function Navbar() {
-  // const { user, username } = { user: "arun", username: "arun-aaryan" };
-  const { user, username } = { user: "arun", username: "" };
+  const { user, logout } = useContext(userContext);
+  const username = user && user.displayName;
+  console.log(user);
+
   return (
-    <nav className="w-full px-2 bg-gray-50 my-4">
+    <nav className="w-full px-2  my-4">
       <ul className="flex  justify-between ">
         <li className="flex-1">
           <Link href="/">
@@ -15,7 +20,10 @@ function Navbar() {
         {username && (
           <>
             <li>
-              <button className="rounded-md font-extrabold text-white p-3 mx-2 px-4 bg-indigo-500">
+              <button
+                onClick={logout}
+                className="rounded-md font-extrabold text-white p-3 mx-2 px-4 bg-indigo-500"
+              >
                 Signout
               </button>
             </li>
