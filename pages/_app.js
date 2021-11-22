@@ -1,6 +1,6 @@
 import "tailwindcss/tailwind.css";
 import { userContext } from "../lib/authContext";
-import { auth, db, getDoc } from "../lib/firebase";
+import { auth, db } from "../lib/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useState, useEffect } from "react";
 import { query, getDocs, collection, where } from "firebase/firestore";

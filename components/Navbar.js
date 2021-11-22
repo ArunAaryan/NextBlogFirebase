@@ -5,7 +5,7 @@ import { userContext } from "../lib/authContext";
 function Navbar() {
   const { user, logout } = useContext(userContext);
   const username = user && user.displayName;
-  console.log(user);
+  // console.log(user);
 
   return (
     <nav className="w-full px-2  my-4">
