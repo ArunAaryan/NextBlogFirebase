@@ -13,6 +13,7 @@ import {
   getDocs,
   orderBy,
   limit,
+  where,
 } from "firebase/firestore";
 export default function Home({ posts }) {
   console.log(posts);
@@ -50,15 +51,20 @@ export async function getServerSideProps(context) {
   const postQuery = firebaseQuery(
     collection(db, "posts"),
     orderBy("createdAt", "desc"),
-    limit(5)
+    // where("published", "==", true),
+    limit(1)
   );
   const querySnapshot = await getDocs(postQuery);
-  console.log(querySnapshot);
   let posts = [];
 
   await querySnapshot.forEach((doc) => {
     posts.push(postToJson(doc));
   });
+  // console.log(querySnapshot.docs);
+  // console.log(querySnapshot.docs[0].data());
+  // await querySnapshot.forEach((doc) => {
+  //   posts.push(doc.data());
+  // });
   // console.log("posts", posts);
   // posts = ["arun"];
   return {
