@@ -1,6 +1,7 @@
 import PostFeed from "../../components/PostFeed";
 import UserProfile from "../../components/UserProfile";
 import { Router, useRouter } from "next/router";
+import Navbar from "../../components/Navbar";
 import {
   auth,
   db,
@@ -21,6 +22,7 @@ function UserProfilePage({ user, posts }) {
   console.log(router.query.username);
   return (
     <main>
+      <Navbar />
       <p>{router.query.username}</p>
       <p>hello</p>
       <UserProfile user={user} />
