@@ -7,8 +7,8 @@ function Navbar() {
   console.log(username);
   console.log("username", username);
   return (
-    <nav className="w-full px-2  my-4">
-      <ul className="flex  justify-between ">
+    <nav className="w-full px-2  my-4  ">
+      <ul className="flex  justify-between  ">
         <li className="flex-1">
           <Link href="/">
             <button className="font-extrabold  rounded-md text-white p-3 px-4 bg-black">
