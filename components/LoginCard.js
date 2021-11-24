@@ -6,7 +6,7 @@ import { userContext } from "../lib/authContext";
 import UsernameForm from "./UsernameForm";
 function LoginCard() {
   const { user, username } = useContext(userContext);
-  console.log(username);
+  console.log("username", username);
 
   return !user ? (
     <div>

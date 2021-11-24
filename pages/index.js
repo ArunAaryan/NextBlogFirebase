@@ -16,7 +16,7 @@ import {
   where,
 } from "firebase/firestore";
 export default function Home({ posts }) {
-  console.log(posts);
+  // console.log(posts);
   const { user, username } = useContext(userContext);
   // console.log(username);
   return (

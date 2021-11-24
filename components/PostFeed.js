@@ -19,9 +19,7 @@ const PostFeed = ({ posts, admin }) => {
   const getMorePosts = async () => {
     setLoading(true);
     let last = lposts[lposts.length - 1];
-    console.log("last post", last.title);
     let cursor = Timestamp.fromMillis(last.createdAt);
-    console.log(cursor - 20);
     const query = firebaseQuery(
       collection(db, "posts"),
       where("published", "==", true),
@@ -35,7 +33,7 @@ const PostFeed = ({ posts, admin }) => {
       newPosts.push(postToJson(doc));
     });
     setPosts(lposts.concat(newPosts));
-    console.log("newPosts", lposts);
+    // console.log("newPosts", lposts);
     setLoading(false);
     if (newPosts.length < 1) {
       setPostsEnd(true);
@@ -57,7 +55,6 @@ const PostFeed = ({ posts, admin }) => {
 };
 
 function PostItem({ post, admin = false }) {
-  // console.log("post title", post.title);
   return (
     <div className="border-2  bg-gray-50 rounded-lg  p-2 m-2 flex items-center  ">
       <Link href={`/${post.username}`}>

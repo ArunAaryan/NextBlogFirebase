@@ -18,6 +18,7 @@ import {
 } from "firebase/firestore";
 function UserProfilePage({ user, posts }) {
   const router = useRouter();
+  console.log(router.query.username);
   return (
     <main>
       <p>{router.query.username}</p>

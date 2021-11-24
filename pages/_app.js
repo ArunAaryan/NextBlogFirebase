@@ -15,8 +15,7 @@ function MyApp({ Component, pageProps }) {
     const q = query(collection(db, "usernames"), where("uid", "==", user.uid));
     const querySnapshot = await getDocs(q);
     // console.log("query");
-    querySnapshot.docs.length &&
-      setUserName({ user: user, username: querySnapshot.docs[0].id });
+    querySnapshot.docs.length && setUserName(querySnapshot.docs[0].id);
   };
   useEffect(() => {
     user && setUserNameHandler();

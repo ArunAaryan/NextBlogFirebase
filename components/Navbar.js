@@ -3,10 +3,9 @@ import { useContext } from "react";
 import { userContext } from "../lib/authContext";
 
 function Navbar() {
-  const { user, logout } = useContext(userContext);
-  const username = user && user.displayName;
-  // console.log(user);
-
+  const { user, username, logout } = useContext(userContext);
+  console.log(username);
+  console.log("username", username);
   return (
     <nav className="w-full px-2  my-4">
       <ul className="flex  justify-between ">
@@ -37,7 +36,7 @@ function Navbar() {
             <li>
               <Link className="-my-10" href={`/${username}`}>
                 <button className="rounded-full font-extrabold bg-blue-100 text-indigo-900 p-3 px-5">
-                  {username[0].toUpperCase()}
+                  {username && username[0].toUpperCase()}
                 </button>
               </Link>
             </li>
